@@ -1,0 +1,46 @@
+html, 
+body {
+    background-color: #001021;
+    margin: 0;
+    height: 100%;
+}
+
+nav {
+    color: #02457a;
+    text-align: center;
+}
+
+main {
+    height: 100%;
+    padding: 0 25em 0 25em;
+}
+
+header {
+    text-align: center;
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: #d6e8ee;
+}
+
+h1 {
+    font-family: "Nunito", sans-serif;
+    font-size: 2rem;
+    color: #97cadb;
+}
+
+a {
+    font-family: "Roboto Mono", monospace;
+    color: #018abe;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+::selection {
+    background-color: #001b48;
+    color: #d6e8ee;
+}
