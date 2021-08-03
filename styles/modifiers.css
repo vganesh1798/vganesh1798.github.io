@@ -1,0 +1,21 @@
+/* MODIFIERS */
+.heading_big {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.heading_huge {
+    font-size: 4rem;
+}
+
+.heading_medium {
+    font-size: 1.5rem;
+}
+
+.project-box_primary {
+    border-radius: 50px 20px;
+}
+
+.project-box_secondary {
+    border-radius: 20px 50px;
+}

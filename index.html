@@ -7,37 +7,102 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="css/global.css">
-	<link rel="stylesheet" href="css/home.css">
-	<link rel="stylesheet" href="css/about.css">
+	<link rel="stylesheet" href="styles/global.css">
+	<link rel="stylesheet" href="styles/blocks.css">
+	<link rel="stylesheet" href="styles/elements.css">
+	<link rel="stylesheet" href="styles/modifiers.css">
+	<script src="scripts/main.js" async></script>
 	<title>Vasu Ganesh</title>
   </head>
-  <body>
-	<header id="#top">
-		<nav>
-			<a href="#top">Home</a> |
-			<a href="#about">About</a> |
-			<a href="#projects">Projects</a> |
-			<a href="#music">Music</a> |
-			<a href="#contact">Contact</a>
+  <body class="body">
+	<header class="header" id="#top">
+		<nav class="nav">
+			<a class="link nav__link" href="#top">Home</a> |
+			<a class="link nav__link" href="#about">About</a> |
+			<a class="link nav__link" href="#projects">Projects</a> |
+			<a class="link nav__link" href="#music">Music</a> |
+			<a class="link nav__link" href="#contact">Contact</a>
 		</nav>
 	</header>
-	<main>
+	<main class="main">
 	  <section class="home">
-		<h1>Vasu Ganesh</h1>
-		<p>Software developer. Musician.</p>
-		<img class="home-icon" alt="GitHub" src="static/github.svg">
-		<img class="home-icon" alt="LinkedIn" src="static/linkedin.svg">
-		<img class="home-icon" alt="Spotify" src="static/spotify.svg">
+		<h1 class="heading heading_huge">Vasu Ganesh</h1>
+		<p class="home__text">Software developer. Musician. Thinker.</p>
+		<div class="icon-box">
+			<a class="link" target="_blank" id="GitHub" href="https://github.com/vganesh1798">
+				<img class="icon-box__icon" title="GitHub" alt="GitHub" src="images/github.svg">
+			</a>
+			<a class="link" target="_blank" id="LinkedIn" href="https://www.linkedin.com/in/vasu-ganesh-43a584150/">
+			    <img class="icon-box__icon" title="LinkedIn" alt="LinkedIn" src="images/linkedin.svg">
+			</a>
+			<a class="link" target="_blank" id="Spotify" href="https://open.spotify.com/user/vasu4ual?si=9c324fc588724ab2">
+				<img class="icon-box__icon" title="Spotify" alt="Spotify" src="images/spotify.svg">
+			</a>
+		</div>
 	  </section>
-	  <section id="about" class="about">
-		  <h1>About Me</h1>
+	  <section class="content-container" id="about">
+		  <h1 class="heading heading_big">About Me</h1>
+		  <hr class="line-break">
 		  <p>
-			  I'm currently an IT Associate Developer with Commerce Bank in Kansas City.
+			  Hi, my name's Vasu Ganesh. Welcome to my website!
+		  </p>
+		  <p>
+			  I'm currently an IT Associate Developer with Commerce Bank in Kansas City, rotating in the DAP program.
 			  I obtained a B.S. in Computer Science from Missouri University of Science & Technology,
 			  and I also obtained minors in Mathematics and Computer Engineering.
 		  </p>
+		  <p>
+			  While in college, I was a radio DJ at the campus radio station, KMNR 89.7 FM. I
+			  also served as the Chief Engineer, System Administrator, and Station Manager of the
+			  radio station at various points during my time as a DJ.
+		  </p>
+		  <p>
+			  I have done quite a bit of full-stack development, and my other interests include
+			  server management, data science, and machine learning. My hobbies include disc golf, hiking, and making music.
+		  </p>
+		  <h2 class="heading heading_medium">Favorite Technologies</h2>
+		  <ul class="bullet-list">
+			  <li class="bullet-list__item">Python</li>
+			  <li class="bullet-list__item">Vue</li>
+			  <li class="bullet-list__item">Linux</li>
+		  </ul>
+	  </section>
+	  <section class="content-container" id="projects">
+		  <h1 class="heading heading_big">Projects</h1>
+		  <hr class="line-break">
+		  <p>
+			  Below are a couple of my favorite projects I have worked on. You can
+			  find a more comprehensive list of my software projects on my
+			  <a class="link" target="_blank" href="https://github.com/vganesh1798">GitHub profile</a>.
+		  </p>
+		  <div class="project-box project-box_primary">
+			  <h2 class="heading heading_medium">suckfm.com</h2>
+		  </div>
+		  <div class="project-box project-box_secondary">
+			<h2 class="heading heading_medium">kmnr.org</h2>
+		</div>
+		<div class="project-box project-box_primary">
+			<h2 class="heading heading_medium">RollaBot</h2>
+		</div>
+	  </section>
+	  <section class="content-container" id="music">
+		  <h1 class="heading heading_big">Music</h1>
+		  <hr class="line-break">
+		  <p>
+			  In addition to being a software developer, I make music in my free time!
+			  I'm a member of a small Midwestern music collective called SuckFM.
+		  </p>
+	  </section>
+	  <section class="content-container" id="contact">
+		  <h1 class="heading heading_big">Contact</h1>
+		  <hr class="line-break">
+		  <p>
+			  Contact info soon
+		  </p>
 	  </section>
 	</main>
+	<!--<footer class="footer">
+		<p>Designed by Vasu Ganesh</p>
+	</footer>-->
   </body>
 </html>

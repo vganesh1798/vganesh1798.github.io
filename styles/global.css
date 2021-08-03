@@ -1,0 +1,11 @@
+/* GLOBAL RULES */
+html {
+    scroll-behavior: smooth;
+    margin: 0;
+    height: 100%;
+}
+
+::selection {
+    background-color: #018abe55;
+    color: #d6e8ee;
+}

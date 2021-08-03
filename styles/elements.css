@@ -1,0 +1,28 @@
+/* ELEMENTS */
+.bullet-list__item {
+    background: url(../images/chevrons-right.svg) no-repeat;
+    padding-left: 40px;
+}
+
+.home__text {
+    font-size: 2rem;
+}
+
+.icon-box__icon {
+    height: 50px;
+    width: 50px;
+    padding: 0 1em 0 1em;
+    transition: 0.5s;
+}
+
+.icon-box__icon:hover {
+    transform: translate(0, -5px);
+}
+
+.nav__link {
+    font-family: "Roboto Mono", monospace;
+}
+
+.nav__link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,77 @@
+/* BLOCKS */
+.body {
+    background-color: #001021;
+    margin: 0;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    color: #d6e8ee;
+}
+
+.bullet-list {
+    list-style: none;
+    font-family: "Roboto Mono", monospace;
+    padding: 0;
+}
+
+.content-container {
+    padding: 1em;
+    margin: 2em;
+}
+
+.footer {
+    font-family: "Roboto Mono", monospace;
+    text-align: center;
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.4);
+    padding: 0.5em 0 0.5em 0;
+}
+
+.header {
+    text-align: center;
+}
+
+.heading {
+    font-family: "Nunito", sans-serif;
+    color: #97cadb;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+}
+
+.icon-box {
+    display: flex;
+    margin: 1em 0 1em 0;
+}
+
+.line-break {
+    border: 1px solid #001b48;
+}
+
+.link {
+    text-decoration: none;
+    color: #018abe;
+}
+
+.main {
+    height: 100%;
+    padding: 0 25em 0 25em;
+}
+
+.nav {
+    color: #02457a;
+    text-align: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+    padding: 1em 0 1em 0;
+}
+
+.project-box{
+    background-color: #001b4855;
+    border: 5px solid #02457a;
+    padding: 1em;
+    margin: 2em;
+}
