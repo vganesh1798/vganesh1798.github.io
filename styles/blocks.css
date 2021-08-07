@@ -7,6 +7,23 @@
     color: #d6e8ee;
 }
 
+.btn {
+    font-family: "Roboto Mono", monospace;
+    background: none;
+    border: 2px solid #02457a;
+    color: #018abe;
+    border-radius: 10px 5px;
+    transition: 0.5s;
+    margin: 0.5em;
+    padding: 0.25em;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #018abe;
+    color: #001021;
+}
+
 .bullet-list {
     list-style: none;
     font-family: "Roboto Mono", monospace;
@@ -16,6 +33,11 @@
 .content-container {
     padding: 1em;
     margin: 2em;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center;
 }
 
 .footer {
@@ -35,10 +57,6 @@
 }
 
 .home {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     height: 100%;
     text-align: center;
 }
@@ -69,7 +87,7 @@
     padding: 1em 0 1em 0;
 }
 
-.project-box{
+.border-box{
     background-color: #001b4855;
     border: 5px solid #02457a;
     padding: 1em;

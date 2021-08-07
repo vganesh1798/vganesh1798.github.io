@@ -2,6 +2,11 @@
 .bullet-list__item {
     background: url(../images/chevrons-right.svg) no-repeat;
     padding-left: 40px;
+    margin: 0.25em 0 0.25em 0;
+}
+
+.flex-container__child {
+    flex-grow: 1;
 }
 
 .home__text {

@@ -25,14 +25,14 @@
 		</nav>
 	</header>
 	<main class="main">
-	  <section class="home">
+	  <section class=" flex-container flex-container_columns flex-container_cross-align home">
 		<h1 class="heading heading_huge">Vasu Ganesh</h1>
 		<p class="home__text">Software developer. Musician. Thinker.</p>
 		<div class="icon-box">
 			<a class="link" target="_blank" id="GitHub" href="https://github.com/vganesh1798">
 				<img class="icon-box__icon" title="GitHub" alt="GitHub" src="images/github.svg">
 			</a>
-			<a class="link" target="_blank" id="LinkedIn" href="https://www.linkedin.com/in/vasu-ganesh-43a584150/">
+			<a class="link" target="_blank" id="LinkedIn" href="https://www.linkedin.com/in/vasu-ganesh/">
 			    <img class="icon-box__icon" title="LinkedIn" alt="LinkedIn" src="images/linkedin.svg">
 			</a>
 			<a class="link" target="_blank" id="Spotify" href="https://open.spotify.com/user/vasu4ual?si=9c324fc588724ab2">
@@ -60,12 +60,50 @@
 			  I have done quite a bit of full-stack development, and my other interests include
 			  server management, data science, and machine learning. My hobbies include disc golf, hiking, and making music.
 		  </p>
-		  <h2 class="heading heading_medium">Favorite Technologies</h2>
-		  <ul class="bullet-list">
-			  <li class="bullet-list__item">Python</li>
-			  <li class="bullet-list__item">Vue</li>
-			  <li class="bullet-list__item">Linux</li>
-		  </ul>
+		  <p>
+			  For a more detailed description of my education and work experience, you can find my resume linked below.
+		  </p>
+		  <div class="flex-container">
+			<button class="btn btn_big">Resume</button>
+		  </div>
+		  <h2 class="heading heading_medium">Technology Skills</h2>
+		  <p>
+			  A star indicates that the listed technology is one of my favorites.
+		  </p>
+		  <div class="flex-container">
+			  <div class="border-box border-box_left flex-container__child ">
+				  <h2 class="heading heading_centered heading_small">Programming Languages</h2>
+				  <ul class="bullet-list">
+					<li class="bullet-list__item">Python*</li>
+					<li class="bullet-list__item">Java</li>
+					<li class="bullet-list__item">C++</li>
+					<li class="bullet-list__item">Javascript</li>
+					<li class="bullet-list__item">Typescript*</li>
+				</ul>
+			  </div>
+			  <div class="border-box border-box_middle flex-container__child ">
+				  <h2 class="heading heading_centered heading_small">Libraries & Frameworks</h2>
+				  <ul class="bullet-list">
+					  <li class="bullet-list__item">Flask*</li>
+					  <li class="bullet-list__item">Django</li>
+					  <li class="bullet-list__item">Spring Boot</li>
+					  <li class="bullet-list__item">Vue.js*</li>
+					  <li class="bullet-list__item">React.js</li>
+				  </ul>
+			  </div>
+			  <div class="border-box border-box_right flex-container__child ">
+				  <h2 class="heading heading_centered heading_small">Tools & Platforms</h2>
+				  <ul class="bullet-list">
+					<li class="bullet-list__item">Linux*</li>
+					<li class="bullet-list__item">Windows</li>
+					<li class="bullet-list__item">Linode</li>
+					<li class="bullet-list__item">DigitalOcean*</li>
+					<li class="bullet-list__item">Git*</li>
+					<li class="bullet-list__item">PostgreSQL*</li>
+					<li class="bullet-list__item">MySQL</li>
+				</ul>
+			  </div>
+		  </div>
 	  </section>
 	  <section class="content-container" id="projects">
 		  <h1 class="heading heading_big">Projects</h1>
@@ -75,14 +113,28 @@
 			  find a more comprehensive list of my software projects on my
 			  <a class="link" target="_blank" href="https://github.com/vganesh1798">GitHub profile</a>.
 		  </p>
-		  <div class="project-box project-box_primary">
+		  <div class="border-box border-box_left">
 			  <h2 class="heading heading_medium">suckfm.com</h2>
+			  <p>
+				  I designed the website for a Midwestern music collective called
+				  SuckFM, of which I am also a member.
+			  </p>
 		  </div>
-		  <div class="project-box project-box_secondary">
-			<h2 class="heading heading_medium">kmnr.org</h2>
+		  <div class="border-box border-box_right">
+			<h2 class="heading heading_medium">KLAP4</h2>
+			<p>
+				The fourth iteration of KMNR's Library Access Program, KLAP4 is an application
+				made to catalog and provide information about a radio station's music library.
+				Features include the ability to make playlists, an audio player that can stream
+				music from local files, and extensive data on the types of music in the library.
+			</p>
 		</div>
-		<div class="project-box project-box_primary">
+		<div class="border-box border-box_left">
 			<h2 class="heading heading_medium">RollaBot</h2>
+			<p>
+				A small project I started in order to learn more about artificial intelligence, RollaBot 
+				studies tweets made by its followers and uses Markov chains to generate new tweets.
+			</p>
 		</div>
 	  </section>
 	  <section class="content-container" id="music">
@@ -97,8 +149,13 @@
 		  <h1 class="heading heading_big">Contact</h1>
 		  <hr class="line-break">
 		  <p>
-			  Contact info soon
+			  Email is the best way to contact me. I'm not currently looking for new work opportunities,
+			  but if you have any questions or comments, feel free to send me an email and I'll do my best
+			  to get back to you!
 		  </p>
+		  <div class="flex-container">
+			<button class="btn btn_big">Email Me</button>
+		  </div>
 	  </section>
 	</main>
 	<!--<footer class="footer">

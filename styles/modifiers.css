@@ -1,4 +1,24 @@
 /* MODIFIERS */
+.btn_center {
+    text-align: center;
+}
+
+.btn_big {
+    font-size: 2rem;
+}
+
+.flex-container_cross-align {
+    align-items: center;
+}
+
+.flex-container_columns {
+    flex-direction: column;
+}
+
+.heading_centered {
+    text-align: center;
+}
+
 .heading_big {
     font-size: 2rem;
     margin-bottom: 0;
@@ -12,10 +32,18 @@
     font-size: 1.5rem;
 }
 
-.project-box_primary {
+.heading_small {
+    font-size: 1.17rem;
+}
+
+.border-box_left {
     border-radius: 50px 20px;
 }
 
-.project-box_secondary {
+.border-box_middle {
+    border-radius: 20px;
+}
+
+.border-box_right {
     border-radius: 20px 50px;
 }
