@@ -1,8 +1,17 @@
 /* GLOBAL RULES */
+body {
+    background-color: #001021;
+    margin: 0;
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    color: #d6e8ee;
+}
+
 html {
     scroll-behavior: smooth;
     margin: 0;
     height: 100%;
+    padding: 0;
 }
 
 ::selection {

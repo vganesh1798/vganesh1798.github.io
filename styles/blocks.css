@@ -1,10 +1,9 @@
 /* BLOCKS */
-.body {
-    background-color: #001021;
-    margin: 0;
-    height: 100%;
-    font-family: "Roboto", sans-serif;
-    color: #d6e8ee;
+.border-box {
+    background-color: #001b4855;
+    border: 5px solid #02457a;
+    padding: 1em;
+    margin: 2em;
 }
 
 .btn {
@@ -60,7 +59,7 @@
 }
 
 .home {
-    height: 100%;
+    height: 100vh;
     text-align: center;
 }
 
@@ -79,7 +78,6 @@
 }
 
 .main {
-    height: 100%;
     padding: 0 25em 0 25em;
 }
 
@@ -88,11 +86,4 @@
     text-align: center;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
     padding: 1em 0 1em 0;
-}
-
-.border-box{
-    background-color: #001b4855;
-    border: 5px solid #02457a;
-    padding: 1em;
-    margin: 2em;
 }
