@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles/global.css">
+        <link rel="stylesheet" href="/styles/blocks.css">
+        <link rel="stylesheet" href="/styles/elements.css">
+        <link rel="stylesheet" href="/styles/modifiers.css">
+        <link rel="stylesheet" href="/styles/prism.css">
+        <script src="/scripts/main.js" async></script>
+        <script src="/scripts/prism.js" async></script>
+        <title>Vasu Ganesh - TGC Blog - Pong</title>
+    </head>
+    <body class="line-numbers">
+        <header class="header" id="#top">
+            <nav class="nav">
+                <a class="link nav__link" href="/">Home</a> |
+                <a class="link nav__link" href="/#about">About</a> |
+                <a class="link nav__link" href="/#projects">Projects</a> |
+                <a class="link nav__link" href="/#contact">Contact</a> |
+                <a class="link nav__link" href="/extras">Extras</a>
+            </nav>
+        </header>
+        <main class="main">
+            <section class="flex-container flex-container_columns flex-container_cross-align home">
+                <h1 class="heading heading_big">Game #1: Pong</h1>
+                <p>
+                    Overall, Pong was not that difficult to complete. I've already had a little bit of
+                    experience with the Godot engine before so most of the time spent working on this game
+                    was just refamiliarizing myself with the various nodes and functions.
+                </p>
+            </section>
+            <section class="content-container">
+                <h2 class="heading heading_medium">
+                    Arena
+                </h2>
+                <hr class="line-break">
+                <p>
+                    To set up the main game scene, I added a <code>ColorRect</code> node and colored it black, then set the
+                    "Anchors Preset" property to "Full Rect" so that the background would take up the whole game screen.
+                </p>
+                <p>
+                    For the wall scene, I set up a <code>StaticBody2D</code> with a rectangular <code>CollisionShape2D</code> that extended the full
+                    length of the viewport window. The sprites were simple white bars I designed in Aseprite.
+                </p>
+                <p>
+                    Finally, the divider is a <code>Sprite2D</code> of a dotted line that I placed in the main game scene.
+                </p>
+            </section>
+            <section class="content-container">
+                <h2 class="heading heading_medium">
+                    Paddles
+                </h2>
+                <hr class="line-break">
+                <p>
+                    The paddle is a <code>CharacterBody2D</code> that is set up so that P1 uses WASD and P2 uses the arrow keys. To check for these
+                    inputs, I exported a variable called <code>player</code> that gets set in the main scene for both paddles. In <code>_physics_process()</code>,
+                    the inputs are checked via string formatting so that when W or S are pressed, the conditional will only evaluate to true for P1 (and likewise for P2):
+                </p>
+                <pre><code class="language-gdscript">
+                    if Input.is_action_pressed("p%s_move_down" % player) and not is_ai:
+                        velocity.y = 1 * SPEED
+                    elif Input.is_action_pressed("p%s_move_up" % player) and not is_ai:
+                        velocity.y = -1 * SPEED
+                    else:
+                        velocity.y = move_toward(velocity.y, 0, SPEED)
+
+                    move_and_slide()
+                </code></pre>
+            </section>
+            <section class="content-container">
+                <h2 class="heading heading_medium">
+                    Ball
+                </h2>
+                <hr class="line-break">
+                <p>
+                    The ball took a few attempts to get right. Originally, I tried using a <code>RigidBody2D</code> but quickly realized that collisions
+                    would be very messy to handle due to the node's physics, so I switched to an <code>Area2D</code>. Unfortunately, vector reflection on collisions
+                    started getting confusing with that node, so I ultimately ended up using a <code>CharacterBody2D</code> to fully control motion and have collision
+                    baked in.
+                </p>
+                <p>
+                    In <code>_ready()</code>, I initialize the ball's X and Y velocities to random values between 25 and 75. Then in <code>_physics_process()</code>,
+                    I simply <code>mode_and_collide()</code> the ball. When a collision is detected, the velocity vector is updated to bounce off of the normal of the
+                    collided surface. This accomplishes a very barebones collision system for now.
+                </p>
+                <pre><code class="language-gdscript">
+                    func _physics_process(delta):
+                        var collision_info = move_and_collide(velocity*delta)
+                        if collision_info:
+                            var normal = collision_info.get_normal()
+                            velocity = velocity.bounce(normal)
+                </code></pre>
+                <p>
+                    After implementing the ball, a new problem arose during testing where if the ball struck a paddle from below, the paddle would treat the ball
+                    like a moving platform and "glue" itself to the object, then get carried away with the ball's movement. This was fixed by setting the motion mode to "floating"
+                    for the paddles. 
+                </p>
+            </section>
+            <section class="content-container">
+                <h2 class="heading heading_medium">
+                    Scores and Rounds
+                </h2>
+                <hr class="line-break">
+                <p>
+                    I added a <code>VisibleOnScreenNotifier2D</code> to the ball for detecting when the ball goes off screen with the <code>screen_exited()</code> signal.
+                    To the ball's code, I added a <code>signal match_over(winner)</code>
+                </p>
+                <p>
+                    The winner of a match is determined by the ball's X-velocity when it exits the screen. If the ball is traveling to the right, then P1 wins the round; if the ball
+                    is traveling to the left, then P2 wins. When the <code>screen_exited()</code> signal is detected, this winner is calculated and the <code>match_over()</code> signal
+                    is emitted. Finally, <code>queue_free()</code> is called to delete the ball instance.
+                </p>
+                <p>
+                    In the main scene, <code>match_over()</code> is detected and a new variable <code>score</code> is updated for the player that won.
+                </p>
+                <p>
+                    To handle respawning the ball, I removed the ball from the main scene and rewrote code to instantiate balls in main via code. The <code>spawn_ball()</code> function
+                    instantiates a <code>ball_scene</code>, sets its position, and connects the <code>match_over</code> signal to <code>_on_ball_match_over()</code> in main. This function is
+                    called in <code>_ready()</code> and <code>_on_ball_match_over()</code> to endlessly loop spawning balls.
+                </p>
+            </section>
+            <section class="content-container">
+                <h2 class="heading heading_medium">
+                    Displaying Scores
+                </h2>
+                <hr class="line-break">
+            </section>
+        </main>
+        <footer class="footer">
+            <p>&copy;2023 Vasu Ganesh</p>
+        </footer>
+    </body>
+</html>
